@@ -285,6 +285,55 @@ The code in this repository is expected to produce:
 - maturity sensitivity tables and plots
 - figures comparing the three methods across strikes
 
+
+---
+
+## Visual Results
+
+The repository also includes figures that summarize the main numerical findings of the paper. These plots make it easier to see how the analytical approximations behave across strike levels, simulation paths, and option maturities.
+
+### Spread Call Price by Strike (30 Days)
+
+This bar chart compares Monte Carlo, Avg-BS, and moment matching prices at three strike levels for 30-day maturity. The Avg-BS method stays very close to Monte Carlo, while the moment-matching method tends to overprice, especially away from the center.
+
+![Spread Call Price by Strike (30 Days)](figures/spread_call_price_by_strike_30d.png)
+
+### Monte Carlo Convergence at ATM (30 Days)
+
+This figure shows how the Monte Carlo estimate stabilizes as the number of simulated paths increases. The Avg-BS line stays close to the converged Monte Carlo benchmark, while the moment-matching approximation remains visibly above it.
+
+![Monte Carlo Convergence at ATM (30 Days)](figures/mc_convergence_atm_30d.png)
+
+### Price vs Maturity
+
+This panel compares prices across maturities for ITM, ATM, and OTM strikes. The Avg-BS method closely tracks Monte Carlo over the whole maturity range, while moment matching shows a wider gap as maturity increases.
+
+![Price vs Maturity](figures/price_vs_maturity.png)
+
+### Price vs Strike (30 Days)
+
+This figure shows the full strike curve for 30-day maturity. Prices decrease smoothly as strike increases, and Avg-BS remains close to Monte Carlo across the strike grid. The moment-matching method is consistently above both, confirming its upward pricing bias.
+
+![Price vs Strike (30 Days)](figures/price_vs_strike_30d.png)
+
+### Residual: MC - Avg-BS across Strike and Maturity
+
+This panel shows the residual error between Monte Carlo and Avg-BS over the strike grid for each maturity. The residuals remain small and structured, which supports the conclusion that Avg-BS is stable and systematically close to the benchmark.
+
+![Residual = MC - Avg-BS across Strike and Maturity](figures/residual_mc_minus_avgbs.png)
+
+### Relative Error of Avg-BS across Strike and Maturity
+
+This panel reports the relative error of Avg-BS by strike and maturity. The error is smallest around lower and near-the-money strikes and becomes larger for more extreme OTM strikes, especially at short maturity.
+
+![Relative Error of Avg-BS across Strike and Maturity](figures/relative_error_avgbs_panels.png)
+
+### Relative Error Heatmap of Avg-BS
+
+The heatmap gives a compact view of how Avg-BS error varies jointly with strike and maturity. It confirms that the approximation remains strongest around lower and moderate strikes, while errors increase in the far OTM region.
+
+![Relative Error Heatmap of Avg-BS](figures/relative_error_avgbs_heatmap.png)
+
 ---
 
 ## Paper
