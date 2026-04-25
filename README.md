@@ -40,15 +40,8 @@ A suggested repository structure is:
 .
 ├── README.md
 ├── paper/
-│   └── Arthur_Carmona_Durrleman.pdf
+│   └── Upon request
 ├── R/
-│   ├── data_preparation.R
-│   ├── monte_carlo_pricing.R
-│   ├── moment_matching.R
-│   ├── avg_bs_method.R
-│   ├── strike_grid_analysis.R
-│   ├── maturity_analysis.R
-│   └── plots_tables.R
 ├── data/
 │   └── README.md
 ├── figures/
@@ -58,7 +51,6 @@ A suggested repository structure is:
 
 ### Folder description
 
-- `paper/` contains the working paper with the theory, derivations, and numerical study
 - `R/` contains scripts for calibration, pricing, simulations, tables, and plots
 - `data/` contains input data or notes explaining how the data should be organized
 - `figures/` contains exported charts for strike comparisons, convergence analysis, and maturity sensitivity
@@ -158,18 +150,12 @@ The calibration uses:
 - 15 years of daily settlement prices
 - 3,776 daily observations from 2010 to 2024
 - annualized volatility estimates
-- correlation estimated from daily log-returns
-
-The main calibration values used in the paper are:
-- `\sigma_1 = 0.18` for soybeans
-- `\sigma_2 = 0.20` for the soybean oil + meal composite
-- `\rho = 0.80`
-- risk-free rate `r = 0`
+- correlation estimated from daily log-returns`
 
 The paper studies 30-day spread call options at three strike levels:
-- ITM: `0.8 × ATM`
+- ITM
 - ATM
-- OTM: `1.2 × ATM`
+- OTM
 
 It also examines sensitivity across maturities `7`, `30`, `90`, and `180` days.
 
@@ -240,16 +226,6 @@ Because of these features, the method is attractive for practical pricing, repea
 4. Install the required R packages.
 5. Run the scripts in the following order:
 
-```r
-# Suggested workflow
-source("R/data_preparation.R")
-source("R/monte_carlo_pricing.R")
-source("R/moment_matching.R")
-source("R/avg_bs_method.R")
-source("R/strike_grid_analysis.R")
-source("R/maturity_analysis.R")
-source("R/plots_tables.R")
-```
 
 6. Check the generated tables in `results/` and exported plots in `figures/`.
 
@@ -338,11 +314,7 @@ The heatmap gives a compact view of how Avg-BS error varies jointly with strike 
 
 ## Paper
 
-The full methodology, derivations, and empirical validation are provided in the working paper:
-
-**Arthur_Carmona_Durrleman.pdf**
-
-This paper is the main reference for the repository and should be read for the full mathematical details.
+The full methodology, derivations, and empirical validation are provided in the working paper wich will be available upon request.
 
 ---
 
